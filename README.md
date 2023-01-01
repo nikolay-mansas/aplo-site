@@ -1,3 +1,3 @@
-# aplo.github.io
+# Aplo site
 
 Site by me.
