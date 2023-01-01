@@ -1,8 +1,26 @@
+table {
+  border-collapse: collapse;
+  /*убираем пустые промежутки между ячейками*/
+  border: 1px solid grey;
+  /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+}
+th {
+  border: 1px solid grey;
+}
+td {
+  border: 1px solid grey;
+}
+.hr-line {
+	margin: 20px 0;
+	padding: 0;
+	height: 0;
+	border: none;
+	border-top: 1px solid #333;
+}
 h1 {
   color: rgb(0, 2, 92);
 }
 .info-block {
-  text-align: center;
   background-color: #ffffff;
   -moz-box-shadow: 0 2px 4px rgba(50,50,93,.1);
   -webkit-box-shadow: 0 2px 4px rgba(50,50,93,.1);
