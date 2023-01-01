@@ -265,20 +265,285 @@
 <br>
 <section class="container about-main full col-xs-12">
   <div class="info-block">
-      <br>
-      <h1>Hi!</h1>
-      <p>Test text
-        Test
-        Test
-        test
-      </p>
-      <video controls width="auto" height="auto">
-        <source src="./assets/video/test-video.mp4" type="video/mp4">
-      </video>  
-      <br>
-      <br>
-      <br>
+    <br>
+    <h2><img src="./assets/img/favicon.png"> the now coin, created on rust.</h2>
+    <h3 style="color: black;">Programmers:</h3>
+    <h4 style="display: inline; color: rgb(59, 58, 58);">YeahNotSewerSide </h4><h6 style="display: inline;color: rgb(59, 58, 58);">DoctorEenot, Github: </h6><a style="color: rgb(59, 58, 58);" href="https://github.com/DoctorEenot">DoctorEenot</a>
+    <br>
+    <h4 style="display: inline; color: rgb(59, 58, 58);">Nikolay </h4><h6 style="display: inline;color: rgb(59, 58, 58);">Mansas, Github: </h6><a style="color: rgb(59, 58, 58);" href="https://github.com/nikolay-mansas">nikolay-mansas</a>
+    <br>
+    <h4 style="display: inline; color: rgb(59, 58, 58);">Kaiiwaii </h4><h6 style="display: inline;color: rgb(59, 58, 58);">Github: </h6><a style="color: rgb(59, 58, 58);" href="https://github.com/kaiiwaii">kaiiwaii</a>
+    <br>
   </div>
+  <br>
+  <br>
+  <div class="info-block">
+    <br>
+    <h1 style="text-align: center;">RandAplo</h1>
+    <h2>APLORandom</h2>
+    <hr class="hr-line">
+
+    <p>Random hashing algorithm with variable memory usage.</p>
+    <p>Designed to be much slower to execute on GPUs and FPGA(with slow ram)</p> 
+    <p>Algorithm uses custom VM</p>   
+    <p>VM's instrution opcode is 2 byte long, instructions have different sizes</p>
+    <br>
+    <h2>VM instruction set</h2>
+    <hr class="hr-line">
+    <table style="text-align: center; width: calc(100% - 50px); margin: auto;">
+      <caption><h3><a href="https://github.com/AploCoin/RandAplo">Github</a></h3></caption>
+      <thead>
+        <tr>
+          <th scope="col"><h4 style="text-align: center;">Number</h4></th>
+          <th scope="col"><h4 style="text-align: center;">Arguments</h4></th>
+          <th scope="col"><h4 style="text-align: center;">Description</h4></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"> </th>
+          <td><h5>Static data operations</h5></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">0</th>
+          <td>1N - 2 bytes, N bytes of data</td>
+          <td>0 - N - (N bytes of data), pushes to the back N bytes, specified after N</td>
+        </tr>
+        <tr>
+          <th scope="row">1</th>
+          <td>N - 2 bytes, N bytes of data</td>
+          <td>Same with instruction 0, but pops/pushes from/to the front</td>
+        </tr>
+        <th scope="row"> </th>
+        <td><h5>Integer operations</h5></td>
+        <td></td>
+        </tr>
+        <tr>
+        <th scope="row">2</th>
+        <td>N - 2 bytes</td>
+        <td>Performing sum on integers, pops 2 N bit intgers from front, sums them, pushes N bit result to the front</td>
+       </tr>
+       <th scope="row">3</th>
+       <td>N - 2 bytes</td>
+       <td>Same with instruction 2, but pops/pushes from/to the back</td>
+     </tr>
+     <tr>
+       <th scope="row">4</th>
+       <td>N - 2 bytes</td>
+       <td>Performs subtraction on integers, pops 2 N bit signed integers from front, subtracts them, pushes N bit result to the front</td>
+     </tr>
+     <th scope="row">5</th>
+     <td>N - 2 bytes</td>
+     <td>Same with 4, but pops/pushes from/to the back</td>
+   </tr>
+   <tr>
+     <th scope="row">6</th>
+     <td>N - 2 bytes</td>
+     <td>Performs unsigned integer multiplication, pops 2 N byte unsigned integers from front, multiplies them, and pushes to the front</td>
+   </tr>
+   <th scope="row">7</th>
+   <td>N - 2 bytes</td>
+   <td>Same with 6, but pops/pushes from/to the back</td>
+ </tr>
+ <tr>
+   <th scope="row"> </th>
+   <td><h5>Float operations</h5></td>
+   <td></td>
+ </tr>
+ <th scope="row">8</th>
+ <td>4 - bytes</td>
+ <td>performs sum of floats(4bytes), pops 2 operands from front, sum them push to front, if encountered overflow or underflow, then 4 bytes specified after opcode are used</td>
+</tr>
+<tr>
+ <th scope="row">9</th>
+ <td>4 - bytes</td>
+ <td>Same with 8, but pops/pushes from/to back</td>
+</tr>
+<th scope="row">10</th>
+<td>4 - bytes</td>
+<td>Same with 8, but multiplication</td>
+</tr>
+<tr>
+<th scope="row">11</th>
+<td>4 - bytes</td>
+<td>Same with 10, but pops/pushes from/to back</td>
+</tr>
+<th scope="row">12</th>
+<td>4 - bytes</td>
+<td>Same with 8, but subtraction</td>
+</tr>
+<tr>
+<th scope="row">13</th>
+<td>4 - bytes</td>
+<td>Same with 12, but pops/pushes from/to back</td>
+</tr>
+<th scope="row">14</th>
+<td>4 - bytes</td>
+<td>Same with 8, but division</td>
+</tr>
+<tr>
+<th scope="row">15</th>
+<td>4 - bytes</td>
+<td>Same with 14, but pops/pushes from/to back</td>
+</tr>
+<th scope="row"> </th>
+<td><h5>Double operations</h5></td>
+<td>6</td>
+</tr>
+<tr>
+<th scope="row">16-23</th>
+<td></td>
+<td>Same operations as for floats, but with doubles</td>
+</tr>
+<th scope="row"> </th>
+<td><h5>Bitwise operations</h5></td>
+<td>For all bitwise operations N = 1+N % bitwise_max_size, where bitwise_max_size is a static predefined number and N - 2 bytes poped from stack, back/front same with instruction's operands</td>
+</tr>
+<tr>
+<th scope="row">24</th>
+<td></td>
+<td>Pops 2 operands with size of N bytes from front, performs logical OR(</td>
+</tr>
+<th scope="row">25</th>
+<td></td>
+<td>Same with 24, but pops/pushes from/to back</td>
+</tr>
+<tr>
+<th scope="row">26</th>
+<td></td>
+<td>Same with 24, but logical AND(&)</td>
+</tr>
+<th scope="row">27</th>
+<td></td>
+<td>Same with 26, but pops/pushes from/to back</td>
+</tr>
+<tr>
+<th scope="row">28</th>
+<td></td>
+<td>Same with 24, but logical XOR(^)</td>
+</tr>
+<th scope="row">29</th>
+<td></td>
+<td>Same with 28, but pops/pushes from/to back</td>
+</tr>
+<tr>
+<th scope="row">30</th>
+<td></td>
+<td>Pops N bytes from front, performs bitwise NOT, pushes back to front</td>
+</tr>
+<th scope="row">31</th>
+<td></td>
+<td>Same with 32, but pops/pushes from/to back</td>
+</tr>
+<tr>
+<th scope="row">32</th>
+<td>S - 1 byte</td>
+<td>Bitwise shift left, shifts N bytes, poped from front, by S bits</td>
+</tr>
+<th scope="row">33</th>
+<td>S - 1 byte</td>
+<td>Same with 32, but pops/pushes from/to back</td>
+</tr>
+<tr>
+<th scope="row">34</th>
+<td>S - 1 byte</td>
+<td>Bitwise shift right, front</td>
+</tr>
+<th scope="row">35</th>
+<td>S - 1 byte</td>
+<td>Bitwise shift right, back</td>
+</tr>
+<tr>
+<th scope="row"> </th>
+<td><h5>Operands via "addresses"</h5></td>
+<td>Address in that context is 64 bit unsigned integer, that specifies position in stack</td>
+</tr>
+<th scope="row">36</th>
+<td></td>
+<td>(Address):Pops 64 bit unsigned integer(big-endian) from front, performs: address = address%(stack.len()-8), takes 2 32bit integers from specified address(big-endian) sums them, psuhes 32bit result to front</td>
+</tr>
+<tr>
+<th scope="row">37</th>
+<td></td>
+<td>Pops address from back(big-endian), performs sum on operands, pushes to back</td>
+</tr>
+<th scope="row">38</th>
+<td></td>
+<td>Same with 36, but subtraction(Front)</td>
+</tr>
+<tr>
+<th scope="row">39</th>
+<td></td>
+<td>Same with 47, but subtraction(Back)</td>
+</tr>
+<th scope="row"> </th>
+<td><h5>AES instructions</h5></td>
+<td></td>
+</tr>
+<tr>
+<th scope="row">40</th>
+<td></td>
+<td>AES128 encrypt, pop key(128 bites) from front and block(128 bites) from back, encrypt, push result to front</td>
+</tr>
+<th scope="row">41</th>
+<td></td>
+<td>AES128 decrypt, same with 40, but decryption</td>
+</tr>
+<tr>
+<th scope="row">42-45</th>
+<td></td>
+<td>AES192, AES256</td>
+</tr>
+<th scope="row"> </th>
+<td><h5>MISC</h5></td>
+<td></td>
+</tr>
+<tr>
+<th scope="row">46</th>
+<td></td>
+<td>Pop 4 bytes from back push to front</td>
+</tr>
+<th scope="row"> </th>
+<td><h5>Digest operations</h5></td>
+<td></td>
+</tr>
+<tr>
+<th scope="row">47</th>
+<td></td>
+<td>Pops 32bit integer from back(big-endian), pushes to final state</td>
+</tr>
+<th scope="row">48</th>
+<td></td>
+<td>Same with 41, but pushes/pops to/from front</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h2>Algorithm Execution</h2>
+<hr class="hr-line">
+<p>Algorithm executes, in blocks. Whole algorithm is ran on every block, after block is calculated it's pushed back to stack. So blocks cannot be predetermined and separated initially, algorithm has to be executed block by block.</p>  
+<p>After execution is finished, VM pops 32 bit integers(big-endian) from front of the stack and pushes them to the final state. If there left 1/2/3 bytes in stack, they are converted to 32 bit integer and pushed to the final state.</p>
+<br>
+<h2>Algorithm Creation</h2>
+<hr class="hr-line">
+<p>Algorithm creation process can be changed, but specified algorithm creator acts like that:</p>
+<br>   
+<p>1.Get RNG, RNG is based on MD5 hash, get random number in range [0,1000), plus that number with min_inp_batch, resulting number is minimal amount of bytes, that algorithm will require to pass to it for execution.</p>
+<p>2.Push result from 1'st step to the algorithm(unsigned 64 bit integer, little-endian)</p>
+<p>3.Check AlgorithmCreator.rs for steps on actual algorithm creation</p>
+<p>4.After algorithm is created, instruction 40 added to the end, that instruction ensures, that stack will be processed from 2 sides, in 1 algorith cycle</p>
+<br>
+<h2>Algorithm Execution</h2>
+<hr class="hr-line">
+<p>Can be used any padding scheme, Padding used in implemetation is based on murmur2(32bit) hash, m = 0x5bd1e995</p>
+<p>Actual data to be hashed is used as seed for RNG based on murmur2.</p>
+<p>Data is getting padded until desired size, if initial_size <= desired_size-4, then push all 4 bytes of random number(from RNG), number is pushed in big-endian order</p>
+<p>if initial_size > desired_size-4, then pushed 1/2/3 bytes of number, starting from least significant byte</p>
+<br>
+</div>
+<br>
+<br>
 </section>
 <!--End xmr script-->
 </body>
