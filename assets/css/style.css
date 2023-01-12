@@ -15,7 +15,7 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .info {
-  borden-radius: 60;
+  border-radius: 30px;
   background-color: #f9f9ff;
   padding: 10px 25px;
 }
