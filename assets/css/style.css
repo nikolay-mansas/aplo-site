@@ -1,5 +1,4 @@
 .lab {
-  border-radius: 60;
   display: block;
   width: 100%;
   height: auto;
@@ -35,6 +34,7 @@
 }
 
 .info__headline::before {
+  border-radius: 60px;
   content: "";
   position: absolute;
   left: -18px;
