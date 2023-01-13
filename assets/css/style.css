@@ -34,7 +34,6 @@
 }
 
 .info__headline::before {
-  border-radius: 60px;
   content: "";
   position: absolute;
   left: -18px;
